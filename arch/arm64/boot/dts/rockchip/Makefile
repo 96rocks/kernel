@@ -82,7 +82,7 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-vr-android.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += ficus-linux.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rock960-model-ab-linux.dtb
 dtb-$(CONFIG_ARCH_ROCKCHIP) += rock960-model-c-linux.dtb
-dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-zaku-linux.dtb
+dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3399-zaku.dtb
 
 always		:= $(dtb-y)
 subdir-y	:= $(dts-dirs)
