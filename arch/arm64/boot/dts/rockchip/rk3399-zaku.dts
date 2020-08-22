@@ -51,8 +51,8 @@
 
 / {
 
-	model = "ROCK960 - 96boards based on Rockchip RK3399";
-	compatible = "rockchip,rock960","rockchip,rk3399";
+	model = "Vamrs RK3399 ZAKU";
+	compatible = "vamrs,zaku","rockchip,rk3399";
 
 	fiq_debugger: fiq-debugger {
 		compatible = "rockchip,fiq-debugger";
