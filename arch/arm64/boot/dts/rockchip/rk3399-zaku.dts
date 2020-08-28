@@ -160,6 +160,37 @@
 		reset-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
 	};
 
+	gpio-keys {
+		compatible = "gpio-keys";
+		#address-cells = <1>;
+		#size-cells = <0>;
+		autorepeat;
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&pwrbtn>;
+
+		button@0 {
+			gpios = <&gpio1 RK_PB1 GPIO_ACTIVE_LOW>;
+			linux,code = <KEY_POWER>;
+			label = "GPIO Key Power";
+			linux,input-type = <1>;
+			gpio-key,wakeup = <1>;
+			debounce-interval = <100>;
+		};
+	};
+
+	gpio-leds {
+		compatible = "gpio-leds";
+		status = "okay";
+
+		work-led {
+			label = "zaku:work";
+			gpios = <&gpio4 RK_PD6 GPIO_ACTIVE_HIGH>;
+			linux,default-trigger = "heartbeat";
+			default-state = "on";
+		};
+	};
+
 	test-power {
 		status = "okay";
 	};
@@ -767,6 +798,11 @@
 		};
 	};
 
+	key {
+		pwrbtn: pwrbtn {
+			rockchip,pins = <0 RK_PB1 RK_FUNC_GPIO &pcfg_pull_up>;
+		};
+	};
 };
 
 &pvtm {
